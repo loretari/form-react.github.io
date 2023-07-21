@@ -46,6 +46,13 @@ export default function Form() {
                 value={formData.email}
             />
 
+            <textarea
+                value= {formData.comments}
+                placeholder = "Comments"
+                onChange = {handlerChange}
+                name= "comments"
+      />
+
         </form>
     )
 }
