@@ -9,9 +9,12 @@ export default function Form() {
             email: "",
             comments: "",
             isFriendly: true,
-            employment: ""
+            employment: "",
+            favColor: ""
         }
     )
+
+    console.log(formData.favColor)
 
     function handlerChange(event) {
         console.log(event)
@@ -101,6 +104,22 @@ export default function Form() {
                 <br/>
 
             </fieldset>
+            <br/>
+            <select
+                id= "favColor"
+                value= {formData.favColor}
+                onChange={handlerChange}
+                name= "favColor"
+            >
+              <option value= "red">Red</option>
+              <option value= "orange">Orange</option>
+              <option value= "yellow">Yellow</option>
+              <option value= "green">Green</option>
+              <option value= "blue">Blue</option>
+              <option value= "indigo">Indigo</option>
+              <option value= "violet">Violet</option>
+
+            </select>
 
         </form>
     )
