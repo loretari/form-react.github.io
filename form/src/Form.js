@@ -14,10 +14,9 @@ export default function Form() {
         }
     )
 
-    console.log(formData.favColor)
+
 
     function handlerChange(event) {
-        console.log(event)
         const {name, value, type, checked} = event.target
         setFormData(prevFormData => {
             return {
@@ -27,8 +26,14 @@ export default function Form() {
         })
     }
 
+    function handleSubmit(event) {
+        event.preventDefault();
+        //submitToApi(formData)
+        console.log(formData)
+    }
+
     return (
-        <form>
+        <form onSubmit={handleSubmit}>
             <input
                 type= "text"
                 placeholder= "First Name"
@@ -120,7 +125,9 @@ export default function Form() {
               <option value= "violet">Violet</option>
 
             </select>
-
+             <br/>
+             <br/>
+             <button>Submit</button>
         </form>
     )
 }
